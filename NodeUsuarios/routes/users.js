@@ -57,18 +57,14 @@ module.exports = (app) => {
         db.update({ _id: req.params.id }, req.body, err => {
 
             if (err) {
-
-                app.utils.error.send(err, req, res)
-
+                app.utils.error.send(err, req, res);
             } else {
-
-                res.status(200).json(Object.assign(req.params, req.body))
-
+                res.status(200).json(Object.assign(req.params, req.body));
             }
 
-        })
+        });
 
-    })
+    });
 
     routeId.delete((req, res) => {
 
@@ -95,17 +91,15 @@ module.exports = (app) => {
         db.insert(req.body, (err, user) => {
 
             if (err) {
-
-                app.utils.error.send(err, req, res)
-
+                app.utils.error.send(err, req, res);
             } else {
 
-                res.status(200).json(user)
+                res.status(200).json(user);
 
             }
 
-        })
+        });
 
-    })
+    });
 
 }

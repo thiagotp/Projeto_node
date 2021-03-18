@@ -30,6 +30,7 @@ class HttpRequest {
 
             let ajax = new XMLHttpRequest();
             ajax.open(method.toUpperCase(), url);
+            console.log(params);
             ajax.onerror = event => {
 
                 reject(event);
@@ -51,6 +52,7 @@ class HttpRequest {
             };
 
             ajax.setRequestHeader('Content-Type', 'application/json');
+            
             ajax.send(JSON.stringify(params));
 
         });
