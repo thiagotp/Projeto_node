@@ -112,8 +112,7 @@ class User {
         return new Promise((resolve, reject) => {
 
             let promise;
-
-            console.log(this.id)   
+   
             if (this.id) {
 
                 promise = HttpRequest.put(`/users/${this.id}`, this.toJSON());
@@ -121,8 +120,6 @@ class User {
             } else {
                 
                 promise = HttpRequest.post(`/users`, this.toJSON());
-                console.log("oi")
-                console.log(promise)
 
             }
 
